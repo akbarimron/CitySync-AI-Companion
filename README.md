@@ -1,52 +1,58 @@
-# CitySync-AI-Companion
-AI City Companion terintegrasi untuk optimasi layanan publik dan pariwisata. Proyek untuk Microsoft Elevate AI Impact Challenge Hackathon 2026
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# 🏙️ CitySync AI: Smart City Companion
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-![Hackathon Badge](https://img.shields.io/badge/Hackathon-Microsoft_Elevate_AI_Impact_Challenge-blue)
-![Theme](https://img.shields.io/badge/Theme-Digital_%26_Creative_Economy-orange)
-![Azure](https://img.shields.io/badge/Powered_by-Microsoft_Azure-blue)
+## About Laravel
 
-**CitySync AI** adalah asisten kota digital cerdas yang dirancang untuk membantu warga dan wisatawan menavigasi kota dengan lebih efisien. Proyek ini menyelesaikan masalah antrean panjang di layanan publik dan rute pariwisata yang kurang optimal melalui satu platform terintegrasi.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-Proyek ini dikembangkan untuk berpartisipasi dalam **Microsoft Elevate AI Impact Challenge Hackathon 2026**, khusus pada tema *Digitalisasi Layanan Publik & Pariwisata*.
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
----
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## 🚀 Live Demo
-- **Link Aplikasi (Deployed):** [Masukkan Link Azure Static Web Apps Kalian]
-- **Video Demo (YouTube):** [Masukkan Link Video Demo Kalian]
-- **Akses Login Demo:** 
-  - Username: `juri@dicoding.com`
-  - Password: `demo`
+## Learning Laravel
 
----
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## 💡 Latar Belakang & "Painkiller" Solusi
-Layanan publik dan sektor pariwisata di perkotaan sering kali terhambat oleh inefisiensi sistem dan informasi yang terfragmentasi, memicu antrean panjang dan pengalaman pengguna yang buruk. 
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Sebagai solusi **"Painkiller"**, CitySync AI tidak sekadar menampilkan direktori kota, melainkan bertindak proaktif:
-1. Menyimulasikan prediksi waktu tunggu (*queue monitoring*) untuk layanan administratif.
-2. Memberikan rekomendasi rute dan alternatif destinasi wisata terdekat yang sedang sepi (*low crowd*).
-3. Menghemat waktu pengguna secara material melalui otomatisasi pencarian informasi yang terintegrasi AI.
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
 
----
+## Agentic Development
 
-## ✨ Fitur Utama
-1. **Proactive Smart Chatbot (Asisten Virtual):** Antarmuka obrolan berbasis NLP multibahasa di mana pengguna dapat memberikan instruksi kompleks (misal: *"Carikan rute ke Disdukcapil, jika antreannya panjang, arahkan saya ngopi di tempat sepi terdekat"*).
-2. **Smart Public Service Monitor:** Visualisasi *dashboard* simulasi untuk cek antrean layanan publik (Kelurahan/Kecamatan) dan rekomendasi jam kunjungan terbaik.
-3. **Context-Aware Tourism Recommender:** Rekomendasi destinasi wisata alternatif secara *real-time* berdasarkan preferensi pengguna dan tingkat keramaian (*crowd level*).
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
 
----
+```bash
+composer require laravel/boost --dev
 
-## 🛠️ Teknologi yang Digunakan
-Sistem ini mengimplementasikan pendekatan *Lean Startup* (Minimum Viable Product) yang dibangun dengan ekosistem modern:
+php artisan boost:install
+```
 
-- **Frontend:** [Sebutkan framework, misal: React.js / Vue.js / TailwindCSS]
-- **AI & NLP:** **Microsoft Azure OpenAI Service** (Untuk logika percakapan dan pemrosesan bahasa natural).
-- **Deployment / Hosting:** **Microsoft Azure Static Web Apps** (Untuk akses publik).
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
----
+## Contributing
 
-## 💻 Cara Menjalankan Proyek Secara Lokal (Local Setup)
-Jika Anda ingin menjalankan proyek ini di mesin lokal, ikuti langkah-langkah berikut:
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Code of Conduct
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
