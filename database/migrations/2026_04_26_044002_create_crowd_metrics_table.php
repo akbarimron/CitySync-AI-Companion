@@ -14,17 +14,17 @@ return new class extends Migration
         Schema::create('crowd_metrics', function (Blueprint $table) {
             $table->id();
             $table->foreignId('device_id')
-                ->constrained('iot_devices')
+                ->constrained()
                 ->cascadeOnDelete();
 
-            $table->dateTime('timestamp');
-            $table->integer('occupancy_count');
+        $table->dateTime('timestamp');
+        $table->integer('occupancy_count');
 
             $table->foreignId('weather_id')
-                ->constrained('weather_reference')
+                ->constrained()
                 ->cascadeOnDelete();
-        });
-    }
+    });
+}
 
     /**
      * Reverse the migrations.
