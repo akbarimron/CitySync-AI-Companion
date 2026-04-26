@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('crowd_metrics', function (Blueprint $table) {
+        Schema::create('itineraries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('device_id')
+            $table->foreignId('user_id')
                 ->constrained()
-                ->cascadeOnDelete();
-
-        $table->dateTime('timestamp');
-        $table->integer('occupancy_count');
-
-            $table->foreignId('weather_id')
-                ->constrained()
-                ->cascadeOnDelete();
+                ->onDelete('cascade');
+            $table->decimal('total_cost', 12, 2);
+            $table->foreignId('statues_id')
+                ->constrained('itinerary_statues')
+                ->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('crowd_metrics');
+        Schema::dropIfExists('itineraries');
     }
 };
