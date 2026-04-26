@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('iot_devices', function (Blueprint $table) {
-            $table->id('device_id');
+            $table->id();
             $table->foreignId('destination_id')
                 ->constrained('destinations')
                 ->cascadeOnDelete();

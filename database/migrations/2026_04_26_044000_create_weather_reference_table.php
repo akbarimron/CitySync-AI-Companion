@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('weather_reference', function (Blueprint $table) {
-            $table->id('weather_id');
+            $table->id();
             $table->string('condition_name'); // contoh: 'Sunny', 'Rainy', 'Cloudy'
             $table->string('icon_code');
             $table->integer('security_level');

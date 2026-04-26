@@ -12,18 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('crowd_metrics', function (Blueprint $table) {
-            $table->bigIncrements('metric_id');
+            $table->id();
             $table->foreignId('device_id')
-                ->constrained('iot_devices', 'device_id')
+                ->constrained()
                 ->cascadeOnDelete();
 
             $table->dateTime('timestamp');
             $table->integer('occupancy_count');
 
-            $table->unsignedBigInteger('weather_id');
-            $table->foreign('weather_id')
-                ->references('weather_id')
-                ->on('weather_reference')
+            $table->foreignId('weather_id')
+                ->constrained()
                 ->cascadeOnDelete();
         });
     }
