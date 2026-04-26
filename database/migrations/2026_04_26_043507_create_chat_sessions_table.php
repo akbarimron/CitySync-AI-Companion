@@ -19,6 +19,7 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->dateTime('started_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

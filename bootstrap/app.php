@@ -11,8 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Exempt AI monitor upload from CSRF protection
+        $middleware->validateCsrfTokens(except: [
+            'akbar/ai-monitor',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        
     })->create();
+

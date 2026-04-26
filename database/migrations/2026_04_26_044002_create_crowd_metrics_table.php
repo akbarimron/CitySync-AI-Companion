@@ -23,6 +23,8 @@ return new class extends Migration
             $table->foreignId('weather_id')
                 ->constrained('weather_reference')
                 ->cascadeOnDelete();
+
+            $table->timestamps();
         });
     }
 
