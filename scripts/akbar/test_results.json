@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-04-26T20:33:37.717616",
+  "tests": {
+    "models_loaded": true,
+    "yolo_available": true,
+    "mobilenet_available": true,
+    "webcam_available": false
+  },
+  "system": {
+    "pytorch_version": "2.11.0+cpu",
+    "opencv_version": "4.13.0",
+    "cuda_available": false
+  }
+}

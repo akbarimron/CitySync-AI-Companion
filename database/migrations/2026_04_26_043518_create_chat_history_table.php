@@ -21,6 +21,7 @@ return new class extends Migration
             $table->enum('sender', ['User', 'AI']);
             $table->text('message_text');
             $table->timestamp('sent_at')->useCurrent();
+            $table->timestamps();
         });
     }
 

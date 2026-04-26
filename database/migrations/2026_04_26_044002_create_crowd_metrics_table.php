@@ -23,8 +23,8 @@ return new class extends Migration
             $table->foreignId('weather_id')
                 ->constrained()
                 ->cascadeOnDelete();
-    });
-}
+        });
+    }
 
     /**
      * Reverse the migrations.
