@@ -1,0 +1,178 @@
+// Imports
+import ___CSS_LOADER_API_SOURCEMAP_IMPORT___ from "../node_modules/css-loader/dist/runtime/sourceMaps.js";
+import ___CSS_LOADER_API_IMPORT___ from "../node_modules/css-loader/dist/runtime/api.js";
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap);"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background:
+        radial-gradient(circle at 15% 8%, rgba(14, 165, 233, 0.14), transparent 26rem),
+        radial-gradient(circle at 92% 22%, rgba(16, 185, 129, 0.14), transparent 26rem),
+        #f7fbff;
+}
+
+::selection {
+    background: rgba(14, 165, 233, 0.22);
+    color: #0f172a;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.5rem 0.9rem;
+    color: #0369a1;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    box-shadow: 0 14px 50px rgba(14, 116, 144, 0.08);
+    backdrop-filter: blur(18px);
+}
+
+.section-title {
+    margin-top: 1rem;
+    max-width: 52rem;
+    color: #020617;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -0.055em;
+    line-height: 0.96;
+}
+
+.section-copy {
+    margin-top: 1.25rem;
+    max-width: 44rem;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.hero-device {
+    transform-style: preserve-3d;
+    animation: floatIn 0.9s ease both;
+}
+
+.city-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(125, 211, 252, 0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 211, 252, 0.13) 1px, transparent 1px);
+    background-size: 38px 38px;
+    mask-image: linear-gradient(to top, black, transparent 72%);
+}
+
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.18));
+    transition: opacity 280ms ease;
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(14, 165, 233, 0.32);
+    box-shadow: 0 28px 90px rgba(14, 116, 144, 0.18);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.chat-shell,
+.dashboard-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-shell::before,
+.dashboard-frame::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: conic-gradient(from 120deg, transparent, rgba(56, 189, 248, 0.18), transparent, rgba(52, 211, 153, 0.16), transparent);
+    animation: spinGlow 10s linear infinite;
+    pointer-events: none;
+}
+
+.chat-shell > *,
+.dashboard-frame > * {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 999px;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 900;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.footer-link:hover {
+    color: #0284c7;
+    transform: translateX(4px);
+}
+
+@keyframes spinGlow {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px) rotateX(3deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+@media (max-width: 640px) {
+    .section-title {
+        line-height: 1.02;
+    }
+
+    .section-copy {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+`, "",{"version":3,"sources":["webpack://./src/App.css"],"names":[],"mappings":"AAEA;IACI,uBAAuB;AAC3B;;AAEA;IACI,4CAA4C;IAC5C;;;eAGW;AACf;;AAEA;IACI,oCAAoC;IACpC,cAAc;AAClB;;AAEA;IACI,oBAAoB;IACpB,mBAAmB;IACnB,oBAAoB;IACpB,yCAAyC;IACzC,qCAAqC;IACrC,sBAAsB;IACtB,cAAc;IACd,kBAAkB;IAClB,gBAAgB;IAChB,sBAAsB;IACtB,yBAAyB;IACzB,gDAAgD;IAChD,2BAA2B;AAC/B;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,cAAc;IACd,oCAAoC;IACpC,gBAAgB;IAChB,wBAAwB;IACxB,iBAAiB;AACrB;;AAEA;IACI,mBAAmB;IACnB,gBAAgB;IAChB,cAAc;IACd,eAAe;IACf,gBAAgB;IAChB,gBAAgB;AACpB;;AAEA;IACI,4BAA4B;IAC5B,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR;;8EAE0E;IAC1E,0BAA0B;IAC1B,2DAA2D;AAC/D;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,gFAAgF;AACpF;;AAEA;IACI,WAAW;IACX,kBAAkB;IAClB,WAAW;IACX,UAAU;IACV,sFAAsF;IACtF,8BAA8B;IAC9B,oBAAoB;AACxB;;AAEA;IACI,2BAA2B;IAC3B,sCAAsC;IACtC,gDAAgD;AACpD;;AAEA;IACI,UAAU;AACd;;AAEA;;IAEI,kBAAkB;IAClB,gBAAgB;AACpB;;AAEA;;IAEI,WAAW;IACX,kBAAkB;IAClB,WAAW;IACX,kIAAkI;IAClI,uCAAuC;IACvC,oBAAoB;AACxB;;AAEA;;IAEI,kBAAkB;IAClB,UAAU;AACd;;AAEA;IACI,oBAAoB;IACpB,mBAAmB;IACnB,YAAY;IACZ,oBAAoB;IACpB,cAAc;IACd,mBAAmB;IACnB,gBAAgB;IAChB,kDAAkD;AACtD;;AAEA;IACI,cAAc;IACd,0BAA0B;AAC9B;;AAEA;IACI;QACI,yBAAyB;IAC7B;AACJ;;AAEA;IACI;QACI,UAAU;QACV,yCAAyC;IAC7C;IACA;QACI,UAAU;QACV,sCAAsC;IAC1C;AACJ;;AAEA;IACI;QACI,iBAAiB;IACrB;;IAEA;QACI,iBAAiB;IACrB;AACJ;;AAEA;IACI;;;QAGI,qCAAqC;QACrC,uCAAuC;QACvC,gCAAgC;QAChC,sCAAsC;IAC1C;AACJ","sourcesContent":["@import url(\"https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap\");\n\nhtml {\n    scroll-behavior: smooth;\n}\n\nbody {\n    font-family: \"Plus Jakarta Sans\", sans-serif;\n    background:\n        radial-gradient(circle at 15% 8%, rgba(14, 165, 233, 0.14), transparent 26rem),\n        radial-gradient(circle at 92% 22%, rgba(16, 185, 129, 0.14), transparent 26rem),\n        #f7fbff;\n}\n\n::selection {\n    background: rgba(14, 165, 233, 0.22);\n    color: #0f172a;\n}\n\n.section-kicker {\n    display: inline-flex;\n    align-items: center;\n    border-radius: 999px;\n    border: 1px solid rgba(14, 165, 233, 0.2);\n    background: rgba(255, 255, 255, 0.75);\n    padding: 0.5rem 0.9rem;\n    color: #0369a1;\n    font-size: 0.75rem;\n    font-weight: 900;\n    letter-spacing: 0.18em;\n    text-transform: uppercase;\n    box-shadow: 0 14px 50px rgba(14, 116, 144, 0.08);\n    backdrop-filter: blur(18px);\n}\n\n.section-title {\n    margin-top: 1rem;\n    max-width: 52rem;\n    color: #020617;\n    font-size: clamp(2.25rem, 6vw, 4rem);\n    font-weight: 900;\n    letter-spacing: -0.055em;\n    line-height: 0.96;\n}\n\n.section-copy {\n    margin-top: 1.25rem;\n    max-width: 44rem;\n    color: #64748b;\n    font-size: 1rem;\n    font-weight: 600;\n    line-height: 1.8;\n}\n\n.hero-device {\n    transform-style: preserve-3d;\n    animation: floatIn 0.9s ease both;\n}\n\n.city-grid-overlay {\n    position: absolute;\n    inset: 0;\n    background-image:\n        linear-gradient(rgba(125, 211, 252, 0.13) 1px, transparent 1px),\n        linear-gradient(90deg, rgba(125, 211, 252, 0.13) 1px, transparent 1px);\n    background-size: 38px 38px;\n    mask-image: linear-gradient(to top, black, transparent 72%);\n}\n\n.feature-card {\n    position: relative;\n    overflow: hidden;\n    transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;\n}\n\n.feature-card::before {\n    content: \"\";\n    position: absolute;\n    inset: -1px;\n    opacity: 0;\n    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.18));\n    transition: opacity 280ms ease;\n    pointer-events: none;\n}\n\n.feature-card:hover {\n    transform: translateY(-8px);\n    border-color: rgba(14, 165, 233, 0.32);\n    box-shadow: 0 28px 90px rgba(14, 116, 144, 0.18);\n}\n\n.feature-card:hover::before {\n    opacity: 1;\n}\n\n.chat-shell,\n.dashboard-frame {\n    position: relative;\n    overflow: hidden;\n}\n\n.chat-shell::before,\n.dashboard-frame::before {\n    content: \"\";\n    position: absolute;\n    inset: -30%;\n    background: conic-gradient(from 120deg, transparent, rgba(56, 189, 248, 0.18), transparent, rgba(52, 211, 153, 0.16), transparent);\n    animation: spinGlow 10s linear infinite;\n    pointer-events: none;\n}\n\n.chat-shell > *,\n.dashboard-frame > * {\n    position: relative;\n    z-index: 1;\n}\n\n.footer-link {\n    display: inline-flex;\n    align-items: center;\n    gap: 0.55rem;\n    border-radius: 999px;\n    color: #475569;\n    font-size: 0.875rem;\n    font-weight: 900;\n    transition: color 180ms ease, transform 180ms ease;\n}\n\n.footer-link:hover {\n    color: #0284c7;\n    transform: translateX(4px);\n}\n\n@keyframes spinGlow {\n    to {\n        transform: rotate(360deg);\n    }\n}\n\n@keyframes floatIn {\n    from {\n        opacity: 0;\n        transform: translateY(28px) rotateX(3deg);\n    }\n    to {\n        opacity: 1;\n        transform: translateY(0) rotateX(0deg);\n    }\n}\n\n@media (max-width: 640px) {\n    .section-title {\n        line-height: 1.02;\n    }\n\n    .section-copy {\n        font-size: 0.9rem;\n    }\n}\n\n@media (prefers-reduced-motion: reduce) {\n    *,\n    *::before,\n    *::after {\n        animation-duration: 0.01ms !important;\n        animation-iteration-count: 1 !important;\n        scroll-behavior: auto !important;\n        transition-duration: 0.01ms !important;\n    }\n}\n"],"sourceRoot":""}]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {};
+export default ___CSS_LOADER_EXPORT___;

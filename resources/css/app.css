@@ -1,1 +1,238 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap");
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+    --background: 207 100% 98%;
+    --foreground: 222 47% 11%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 199 94% 94%;
+    --accent-foreground: 199 89% 28%;
+    --border: 199 94% 88%;
+    --radius: 0.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    background:
+        radial-gradient(circle at 15% 8%, rgba(14, 165, 233, 0.14), transparent 26rem),
+        radial-gradient(circle at 92% 22%, rgba(16, 185, 129, 0.14), transparent 26rem),
+        #f7fbff;
+    color: hsl(var(--foreground));
+}
+
+::selection {
+    background: rgba(14, 165, 233, 0.22);
+    color: #0f172a;
+}
+
+/* ─── Section Utilities ─────────────────────────────────────── */
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 0.5rem 0.9rem;
+    color: #0369a1;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    box-shadow: 0 14px 50px rgba(14, 116, 144, 0.08);
+    backdrop-filter: blur(18px);
+}
+
+.section-title {
+    margin-top: 1rem;
+    max-width: 52rem;
+    color: #020617;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1;
+}
+
+.section-copy {
+    margin-top: 1.25rem;
+    max-width: 44rem;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+/* ─── Hero Device ───────────────────────────────────────────── */
+.hero-device {
+    transform-style: preserve-3d;
+    animation: floatIn 0.9s ease both;
+}
+
+.city-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(125, 211, 252, 0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(125, 211, 252, 0.13) 1px, transparent 1px);
+    background-size: 38px 38px;
+    mask-image: linear-gradient(to top, black, transparent 72%);
+}
+
+/* ─── Feature Cards ─────────────────────────────────────────── */
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.18));
+    transition: opacity 280ms ease;
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(14, 165, 233, 0.32);
+    box-shadow: 0 28px 90px rgba(14, 116, 144, 0.18);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* ─── Chat Shell & Dashboard Frame ─────────────────────────── */
+.chat-shell,
+.dashboard-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-shell::before,
+.dashboard-frame::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: conic-gradient(from 120deg, transparent, rgba(56, 189, 248, 0.18), transparent, rgba(52, 211, 153, 0.16), transparent);
+    animation: spinGlow 10s linear infinite;
+    pointer-events: none;
+}
+
+.chat-shell > *,
+.dashboard-frame > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── Footer Links ──────────────────────────────────────────── */
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    border-radius: 999px;
+    color: #475569;
+    font-size: 0.875rem;
+    font-weight: 900;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.footer-link:hover {
+    color: #0284c7;
+    transform: translateX(4px);
+}
+
+/* ─── Navbar ────────────────────────────────────────────────── */
+.cs-navbar {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 50;
+    padding: 1rem;
+}
+
+.cs-nav-inner {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.78);
+    padding: 0.75rem 1.25rem;
+    box-shadow: 0 18px 70px rgba(14, 116, 144, 0.16);
+    backdrop-filter: blur(24px);
+}
+
+/* ─── Destination Cards ─────────────────────────────────────── */
+.dest-card {
+    transition: transform 300ms ease, border-color 300ms ease;
+    cursor: pointer;
+}
+
+.dest-card:hover {
+    transform: translateY(-4px);
+}
+
+.dest-card.active {
+    border-color: rgb(103 232 249);
+    background: rgba(236, 254, 255, 0.9);
+}
+
+/* ─── Heatmap ───────────────────────────────────────────────── */
+.heatmap-hot { background: rgb(248 113 113); opacity: 0.9; }
+.heatmap-mid { background: rgb(34 211 238); opacity: 0.7; }
+.heatmap-low { background: rgb(52 211 153); opacity: 0.5; }
+
+/* ─── Keyframes ─────────────────────────────────────────────── */
+@keyframes spinGlow {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px) rotateX(3deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ─── Responsive Tweaks ─────────────────────────────────────── */
+@media (max-width: 640px) {
+    .section-title { line-height: 1.05; }
+    .section-copy { font-size: 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

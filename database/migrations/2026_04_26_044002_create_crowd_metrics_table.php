@@ -10,22 +10,21 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-{
-    Schema::create('crowd_metrics', function (Blueprint $table) {
-        $table->id();
-
-        $table->foreignId('device_id')
-                ->constrained('iot_devices')
+    {
+        Schema::create('crowd_metrics', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('device_id')
+                ->constrained()
                 ->cascadeOnDelete();
 
         $table->dateTime('timestamp');
         $table->integer('occupancy_count');
 
-        $table->foreignId('weather_id')
-                ->constrained('weather_reference')
+            $table->foreignId('weather_id')
+                ->constrained()
                 ->cascadeOnDelete();
-    });
-}
+        });
+    }
 
     /**
      * Reverse the migrations.
