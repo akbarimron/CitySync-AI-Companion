@@ -21,7 +21,7 @@ class AiMonitorController extends Controller
         ]);
     }
 
-    public function analyze(Request $request): View|RedirectResponse
+    public function analyze(Request $request)
     {
         // Extensive debug logging
         $debugInfo = [
@@ -36,6 +36,8 @@ class AiMonitorController extends Controller
         ];
         
         \Log::info('=== ANALYZE REQUEST DEBUG ===', $debugInfo);
+        
+        $wantsJson = $request->wantsJson() || $request->has('json');
         
         // Get the raw files array
         $files = $request->allFiles();
@@ -63,9 +65,9 @@ class AiMonitorController extends Controller
             if (!$videoFile->isValid()) {
                 $error = $videoFile->getErrorMessage();
                 \Log::error('File invalid', ['error' => $error]);
-                return back()
-                    ->withErrors(['ai' => 'File upload invalid: ' . $error])
-                    ->withInput();
+                return $wantsJson 
+                    ? response()->json(['success' => false, 'message' => 'File upload invalid: ' . $error], 400)
+                    : back()->withErrors(['ai' => 'File upload invalid: ' . $error])->withInput();
             }
 
             // Save file to input directory
@@ -83,9 +85,9 @@ class AiMonitorController extends Controller
             // Verify file exists
             if (!file_exists($fullPath)) {
                 \Log::error('File move failed', ['expected_path' => $fullPath]);
-                return back()
-                    ->withErrors(['ai' => 'File gagal disimpan ke storage.'])
-                    ->withInput();
+                return $wantsJson
+                    ? response()->json(['success' => false, 'message' => 'File gagal disimpan ke storage.'], 500)
+                    : back()->withErrors(['ai' => 'File gagal disimpan ke storage.'])->withInput();
             }
             
             \Log::info('File saved successfully', [
@@ -94,24 +96,24 @@ class AiMonitorController extends Controller
                 'exists' => file_exists($fullPath),
             ]);
             
-            return $this->executeAnalysis($fullPath);
+            return $this->executeAnalysis($fullPath, $wantsJson);
         }
 
         // Check for video source (URL/path/webcam)
         $videoSource = trim((string) ($request->input('video_source') ?? ''));
         if (!empty($videoSource)) {
             \Log::info('Using video source', ['source' => $videoSource]);
-            return $this->executeAnalysis($videoSource);
+            return $this->executeAnalysis($videoSource, $wantsJson);
         }
 
         // No file and no source
         \Log::warning('No file or source provided', $debugInfo);
-        return back()
-            ->withErrors(['ai' => 'Upload video atau isi URL/path video source.'])
-            ->withInput();
+        return $wantsJson
+            ? response()->json(['success' => false, 'message' => 'Upload video atau isi URL/path video source.'], 400)
+            : back()->withErrors(['ai' => 'Upload video atau isi URL/path video source.'])->withInput();
     }
 
-    private function executeAnalysis(string $source): View|RedirectResponse
+    private function executeAnalysis(string $source, bool $wantsJson = false)
     {
         // Use wrapper script instead of direct script
         $scriptPath = base_path('scripts/akbar/app_vr_ai_wrapper.py');
@@ -121,9 +123,9 @@ class AiMonitorController extends Controller
         }
         
         if (!File::exists($scriptPath)) {
-            return back()
-                ->withErrors(['ai' => 'Script AI tidak ditemukan.'])
-                ->withInput();
+            return $wantsJson
+                ? response()->json(['success' => false, 'message' => 'Script AI tidak ditemukan.'], 500)
+                : back()->withErrors(['ai' => 'Script AI tidak ditemukan.'])->withInput();
         }
 
         $runId = (string) Str::uuid();
@@ -181,38 +183,38 @@ class AiMonitorController extends Controller
                 'error' => $error,
                 'output' => $process->getOutput(),
             ]);
-            return back()
-                ->withErrors(['ai' => 'Proses AI gagal: ' . substr($error, 0, 200)])
-                ->withInput();
+            return $wantsJson
+                ? response()->json(['success' => false, 'message' => 'Proses AI gagal: ' . substr($error, 0, 200)], 500)
+                : back()->withErrors(['ai' => 'Proses AI gagal: ' . substr($error, 0, 200)])->withInput();
         }
 
         if (!File::exists($outputJson)) {
             \Log::error('Output JSON not found', ['path' => $outputJson]);
-            return back()
-                ->withErrors(['ai' => 'Proses selesai, file hasil tidak ditemukan.'])
-                ->withInput();
+            return $wantsJson
+                ? response()->json(['success' => false, 'message' => 'Proses selesai, file hasil tidak ditemukan.'], 500)
+                : back()->withErrors(['ai' => 'Proses selesai, file hasil tidak ditemukan.'])->withInput();
         }
 
         try {
             $decoded = json_decode((string) File::get($outputJson), true);
             if (!is_array($decoded)) {
                 \Log::error('Invalid JSON output');
-                return back()
-                    ->withErrors(['ai' => 'Format hasil AI tidak valid.'])
-                    ->withInput();
+                return $wantsJson
+                    ? response()->json(['success' => false, 'message' => 'Format hasil AI tidak valid.'], 500)
+                    : back()->withErrors(['ai' => 'Format hasil AI tidak valid.'])->withInput();
             }
 
             if (!(bool) ($decoded['success'] ?? false)) {
                 \Log::warning('AI analysis unsuccessful', ['message' => $decoded['message'] ?? 'Unknown error']);
-                return back()
-                    ->withErrors(['ai' => (string) ($decoded['message'] ?? 'Analisis gagal.')])
-                    ->withInput();
+                return $wantsJson
+                    ? response()->json(['success' => false, 'message' => (string) ($decoded['message'] ?? 'Analisis gagal.')], 400)
+                    : back()->withErrors(['ai' => (string) ($decoded['message'] ?? 'Analisis gagal.')])->withInput();
             }
         } catch (\Exception $e) {
             \Log::error('Error parsing AI output', ['error' => $e->getMessage()]);
-            return back()
-                ->withErrors(['ai' => 'Error parsing results: ' . $e->getMessage()])
-                ->withInput();
+            return $wantsJson
+                ? response()->json(['success' => false, 'message' => 'Error parsing results: ' . $e->getMessage()], 500)
+                : back()->withErrors(['ai' => 'Error parsing results: ' . $e->getMessage()])->withInput();
         }
 
         $outputVideoUrl = File::exists($outputVideo)
@@ -220,6 +222,25 @@ class AiMonitorController extends Controller
             : null;
 
         \Log::info('AI analysis completed successfully', ['run_id' => $runId]);
+
+        if ($wantsJson) {
+            $weather = $decoded['dominant_weather_label'] ?? '-';
+            $weatherIcon = match(true) {
+                str_contains($weather, 'Cerah') && !str_contains($weather, 'Berawan') => '☀️',
+                str_contains($weather, 'Cerah Berawan') => '⛅',
+                str_contains($weather, 'Berawan') => '☁️',
+                str_contains($weather, 'Mendung') => '🌥️',
+                str_contains($weather, 'Hujan') || str_contains($weather, 'Kabut') => '🌧️',
+                str_contains($weather, 'Malam') => '🌙',
+                default => '🌤️',
+            };
+
+            return response()->json(array_merge($decoded, [
+                'output_video_url' => $outputVideoUrl,
+                'source_used' => $source,
+                'weather_icon' => $weatherIcon
+            ]));
+        }
 
         return view('akbar.ai-monitor', [
             'result' => $decoded,

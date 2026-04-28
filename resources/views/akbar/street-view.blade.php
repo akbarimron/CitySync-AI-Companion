@@ -27,8 +27,8 @@
         </div>
     </header>
 
-    <section class="grid grid-cols-1 gap-4 xl:grid-cols-12">
-        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 xl:col-span-3">
+    <section class="grid grid-cols-1 gap-4 lg:grid-cols-12">
+        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:col-span-3">
             <h2 class="mb-4 text-lg font-semibold">Pengaturan Embed</h2>
             <label for="street-view-location" class="mb-2 block text-sm font-medium">Contoh Street View</label>
             <select
@@ -72,12 +72,12 @@
             </p>
         </article>
 
-        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 xl:col-span-9">
+        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:col-span-9">
             <h2 class="mb-4 text-lg font-semibold">Viewer</h2>
             <div id="street-view-error" class="mb-3 hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/40 dark:text-red-200"></div>
             <iframe
                 id="akbar-street-view"
-                class="h-[65vh] min-h-[520px] w-full rounded-lg border border-slate-200 dark:border-slate-700 xl:h-[78vh] xl:min-h-[760px]"
+                class="h-[65vh] min-h-[520px] w-full rounded-lg border border-slate-200 dark:border-slate-700 lg:h-[78vh] lg:min-h-[760px]"
                 src="{{ $defaultLocation['embed_url'] }}"
                 style="border:0;"
                 loading="lazy"

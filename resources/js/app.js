@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
     
-    if (mobileMenuBtn) {
+    if (mobileMenuBtn && mobileMenu && menuIconOpen && menuIconClose) {
         mobileMenuBtn.addEventListener('click', function() {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            menuIconOpen.classList.toggle('hidden');
-            menuIconClose.classList.toggle('hidden');
-            this.setAttribute('aria-expanded', !isHidden);
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', isOpen);
+            menuIconOpen.classList.toggle('hidden', !isOpen);
+            menuIconClose.classList.toggle('hidden', isOpen);
+            this.setAttribute('aria-expanded', String(!isOpen));
         });
     }
 });

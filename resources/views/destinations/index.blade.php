@@ -6,44 +6,48 @@
 <div class="bg-base-100 min-h-screen">
     
     <!-- HERO SECTION -->
-    <section class="relative py-16 md:py-24 bg-gradient-to-br from-cyan-50 via-slate-50 to-emerald-50 overflow-hidden">
+    <section class="relative py-14 md:py-20 bg-gradient-to-br from-cyan-50 via-slate-50 to-emerald-50 overflow-hidden">
         <div class="absolute inset-0 opacity-30">
             <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
             <div class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
         </div>
         
-        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-6">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-                    <span class="block bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
-                        Jelajahi Destinasi Wisata
-                    </span>
-                    <span class="block text-slate-900 mt-2">Jakarta Bersama AI</span>
-                </h1>
-                
-                <p class="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed">
-                    Temukan destinasi impian dengan teknologi AI. Lihat preview 360°, pantau cuaca real-time, analisa kepadatan, 
-                    dan pesan tiket dengan harga terbaik.
-                </p>
-                
-                <!-- Search Bar -->
-                <div class="max-w-xl mx-auto pt-4">
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            placeholder="🔍 Cari destinasi favorit..." 
-                            class="flex-1 px-6 py-3 rounded-full border-2 border-slate-200 focus:border-cyan-500 focus:outline-none transition-colors"
-                        />
-                        <button 
-                            id="search-btn" 
-                            class="btn btn-primary rounded-full h-12 px-8 font-bold gap-2"
-                        >
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                            Cari
-                        </button>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
+                <div class="text-center space-y-5">
+                    <div class="inline-flex items-center gap-2 rounded-full bg-cyan-100 px-4 py-2">
+                        <span class="text-xs font-black uppercase tracking-[0.22em] text-cyan-700">Destinasi Curated</span>
+                    </div>
+                    <h1 class="text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                        <span class="block bg-gradient-to-r from-cyan-600 via-blue-600 to-emerald-600 bg-clip-text text-transparent">
+                            Jelajahi Destinasi Wisata
+                        </span>
+                        <span class="mt-2 block text-slate-900">Jakarta Bersama AI</span>
+                    </h1>
+                    
+                    <p class="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600">
+                        Temukan destinasi impian dengan preview 360, cuaca real-time, analisis kepadatan, dan booking demo yang lebih rapi.
+                    </p>
+                    
+                    <!-- Search Bar -->
+                    <div class="mx-auto max-w-2xl pt-2">
+                        <div class="flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-sm sm:flex-row">
+                            <input 
+                                type="text" 
+                                id="search-input" 
+                                placeholder="🔍 Cari destinasi favorit..." 
+                                class="flex-1 rounded-full border-0 bg-slate-50 px-6 py-3 focus:ring-2 focus:ring-cyan-400"
+                            />
+                            <button 
+                                id="search-btn" 
+                                class="btn btn-primary h-12 rounded-full px-8 font-bold gap-2"
+                            >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                Cari
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,7 +55,7 @@
     </section>
 
     <!-- FILTER SECTION -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h2 class="text-sm font-bold text-slate-600 uppercase tracking-widest mb-4">Kategori</h2>
         <div class="flex flex-wrap gap-3">
             <button class="filter-btn btn btn-sm btn-outline rounded-full transition-all hover:scale-105" data-filter="all">
@@ -73,7 +77,7 @@
     </section>
 
     <!-- DESTINATIONS GRID -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <!-- Cards akan dimuat via JavaScript -->
         </div>

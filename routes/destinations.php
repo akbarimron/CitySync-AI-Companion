@@ -9,7 +9,7 @@ Route::prefix('destinations')->group(function () {
     })->name('destinations.index');
     
     Route::get('/{destination}', function ($destination) {
-        return view('destinations.show', ['destination' => $destination]);
+        return view('destinations.dashboard', ['destination' => $destination]);
     })->name('destinations.show');
     
 });

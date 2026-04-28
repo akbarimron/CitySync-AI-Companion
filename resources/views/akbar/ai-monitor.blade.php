@@ -27,8 +27,8 @@
         </div>
     </header>
 
-    <section class="grid grid-cols-1 gap-4 xl:grid-cols-12">
-        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 xl:col-span-4">
+    <section class="grid grid-cols-1 gap-4 lg:grid-cols-12">
+        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:col-span-4">
             <h2 class="mb-4 text-lg font-semibold">Jalankan Analisis AI</h2>
 
             @if ($errors->any())
@@ -204,7 +204,7 @@
             </div>
         </article>
 
-        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 xl:col-span-8">
+        <article class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:col-span-8">
             <h2 class="mb-4 text-lg font-semibold">Hasil Analisis</h2>
 
             @if ($result)
