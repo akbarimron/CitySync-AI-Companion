@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CrowdMetrics extends Model
 {
+    public $timestamps = false;
+    
     protected $fillable = [
         'device_id',
         'timestamp',
