@@ -39,10 +39,6 @@
     <div class="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div class="space-y-8 flex flex-col items-center w-full">
             <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 backdrop-blur-sm">
-                <svg class="h-4 w-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-xs font-bold uppercase tracking-widest text-cyan-300">SQL-backed tourism OS</span>
             </div>
 
             <div class="space-y-5">
@@ -52,7 +48,7 @@
                         dari satu alur yang rapi
                     </span>
                 </h1>                        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-                    Street View tampil di home, AI monitor berada di dalam dashboard destinasi, dan semua data utama ditarik dari MySQL agar pengalaman tetap konsisten.
+                    Experience dynamic itineraries, real-time crowd avoidance, and immersive VR previews seamlessly integrated with public services.
                 </p>
             </div>
 
@@ -77,17 +73,10 @@
                     <div class="text-3xl font-black text-cyan-400">{{ number_format($pageStats['destinations'] ?? 0) }}</div>
                     <p class="text-sm text-slate-400">Destinasi aktif</p>
                 </div>
+
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                    <div class="text-3xl font-black text-emerald-400">{{ number_format($pageStats['categories'] ?? 0) }}</div>
-                    <p class="text-sm text-slate-400">Kategori SQL</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                    <div class="text-3xl font-black text-blue-400">{{ number_format($pageStats['devices'] ?? 0) }}</div>
-                    <p class="text-sm text-slate-400">Perangkat aktif</p>
-                </div>
-                <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
-                    <div class="text-3xl font-black text-violet-400">{{ number_format($pageStats['signals'] ?? 0) }}</div>
-                    <p class="text-sm text-slate-400">Signal crowd</p>
+                    <div class="text-3xl font-black text-violet-400">100k</div>
+                    <p class="text-sm text-slate-400">Pengunjung</p>
                 </div>
             </div>
         </div>
@@ -110,7 +99,7 @@
 
             <div class="max-w-2xl">
                 <h2 class="mb-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
-                    Fitur inti dalam satu sistem terintegrasi
+                    A tourism assistant that thinks like a city command center.
                 </h2>
                 <p class="text-base leading-relaxed text-slate-600">
                     Semua fitur dirancang untuk memberikan pengalaman yang konsisten, efisien, dan seamless dalam satu platform.
@@ -145,7 +134,7 @@
             </a>
 
             <!-- 2 -->
-            <a href="{{ url('/scheduling') }}">
+            <a href="#preview-360" class="block">
                 <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
                     <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
                         <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -160,46 +149,52 @@
             </a>
 
             <!-- 3 -->
-            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                        <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/>
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-slate-900">Immersive Real-Time Preview</h3>
-                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Menampilkan preview destinasi secara real-time untuk membantu pengguna sebelum berkunjung.
-                </p>
-            </article>
+            <a href="#preview-360" class="block">
+                <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Immersive Real-Time Preview</h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Menampilkan preview destinasi secara real-time untuk membantu pengguna sebelum berkunjung.
+                    </p>
+                </article>
+            </a>
 
             <!-- 4 -->
-            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                        <rect x="3" y="4" width="18" height="18" rx="2"/>
-                        <path d="M8 2v4M16 2v4M3 10h18"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-slate-900">Smart Booking & Dynamic Pricing</h3>
-                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Sistem booking pintar dengan penyesuaian harga dinamis berdasarkan kondisi dan permintaan.
-                </p>
-            </article>
+            <a href="#preview-360" class="block">
+                <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <path d="M8 2v4M16 2v4M3 10h18"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Smart Booking & Dynamic Pricing</h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Sistem booking pintar dengan penyesuaian harga dinamis berdasarkan kondisi dan permintaan.
+                    </p>
+                </article>
+            </a>
 
             <!-- 5 -->
-            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                        <rect x="2" y="5" width="20" height="14" rx="2"/>
-                        <path d="M2 10h20"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-slate-900">Unified Payment & Access</h3>
-                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Integrasi pembayaran dan akses dalam satu sistem untuk pengalaman yang lebih praktis.
-                </p>
-            </article>
+            <a href="#preview-360" class="block">
+                <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <rect x="2" y="5" width="20" height="14" rx="2"/>
+                            <path d="M2 10h20"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Unified Payment & Access</h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Integrasi pembayaran dan akses dalam satu sistem untuk pengalaman yang lebih praktis.
+                    </p>
+                </article>
+            </a>
 
         </div>
 
@@ -224,22 +219,15 @@
                 </p>
 
                 <h2 class="text-4xl font-black leading-tight text-slate-900 sm:text-5xl">
-                    Destinasi yang siap dipakai di SQL
+                    Destinasi Favorit para wisatawan
                 </h2>
 
                 <p class="text-base leading-7 text-slate-600">
-                    Data ini digunakan di seluruh sistem agar pengalaman tetap konsisten dari home sampai dashboard.
+                    Destinasi paling banyak dikunjungi dan selalu ramai
                 </p>
             </div>
 
-            <a href="{{ url('/destinations') }}"
-               class="group inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-black text-white shadow-lg shadow-slate-900/20 transition-all hover:-translate-y-0.5 hover:bg-slate-800">
-                Buka daftar destinasi
-                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1"
-                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </a>
+           
 
         </div>
 
@@ -312,12 +300,10 @@
 <section id="preview-360" class="bg-gradient-to-br from-slate-50 to-cyan-50 px-4 py-24 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-7xl">
         <div class="mb-12 space-y-4 text-center">
-            <div class="inline-flex items-center gap-2 rounded-full bg-cyan-100 px-4 py-2">
-                <span class="text-sm font-bold uppercase tracking-widest text-cyan-700">🗺️ Preview 360 demo</span>
-            </div>
-            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">Street View 360 langsung dari data SQL</h2>
+           
+            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">Lihat lokasi, cek kepadatan, lalu pesan tiket dalam satu alur.</h2>
             <p class="mx-auto max-w-2xl text-lg text-slate-600">
-                Pilih destinasi di bawah untuk memindahkan preview Street View, tanpa perlu pindah ke halaman lain.
+                Wisatawan bisa memilih destinasi Jakarta, melihat peta interaktif, membuka Google Maps, memilih paket tiket, lalu mendapatkan konfirmasi booking demo tanpa pembayaran asli.
             </p>
         </div>
 
@@ -326,15 +312,8 @@
         </div>
 
         <div class="grid gap-4 md:gap-8 grid-cols-12">
-            <div class="space-y-4 col-span-5 md:col-span-4">
-                <div class="flex items-center gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3">
-                    <div class="h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <div>
-                        <p class="text-sm font-bold text-emerald-900">Street View aktif</p>
-                        <p class="text-xs text-emerald-700">Preview ditarik dari SQL</p>
-                    </div>
-                </div>
-
+            <!-- Destination List di atas dengan full width -->
+            <div class="col-span-12">
                 <div class="space-y-3">
                     @foreach ($previewDestinations as $destination)
                         <button onclick="updatePreview('{{ $destination['slug'] }}', this)" data-dest="{{ $destination['slug'] }}" class="destination-preview-card group w-full rounded-2xl border-2 border-transparent bg-white p-4 text-left shadow-sm transition-all duration-300 hover:border-cyan-400 hover:shadow-md {{ $loop->first ? 'active border-cyan-500 shadow-md' : '' }} flex items-center justify-between">
@@ -358,45 +337,43 @@
                 </div>
             </div>
 
-            <div class="rounded-[2rem] bg-white p-6 shadow-lg col-span-7 md:col-span-8 overflow-hidden">
-                <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
+            <!-- Preview Street View di kiri -->
+            <div class="col-span-12 md:col-span-6">
+                <div class="overflow-hidden rounded-[1.5rem] border border-slate-200 shadow-sm h-full">
+                    <iframe id="preview-street-view" width="100%" height="400" style="border:none;" src="{{ isset($firstPreview['street_view_url']) ? $firstPreview['street_view_url'] . '&output=svembed' : '' }}" title="Street View 360" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Selected Destination di kanan -->
+            <div class="col-span-12 md:col-span-6">
+                <div class="rounded-[2rem] bg-white p-6 shadow-lg overflow-hidden h-full flex flex-col">
+                    <div class="mb-6">
                         <h3 class="mb-2 text-xs font-bold uppercase tracking-widest text-slate-500">Selected destination</h3>
-                        <h2 id="preview-dest-name" class="text-4xl font-black text-slate-900">{{ $firstPreview['name'] ?? 'Preview 360' }}</h2>
-                        <p id="preview-dest-desc" class="max-w-xl leading-relaxed text-slate-600">{{ $firstPreview['preview_copy'] ?? '' }}</p>
+                        <h2 id="preview-dest-name" class="text-3xl md:text-4xl font-black text-slate-900">{{ $firstPreview['name'] ?? 'Preview 360' }}</h2>
+                        <p id="preview-dest-desc" class="mt-2 leading-relaxed text-slate-600">{{ $firstPreview['preview_copy'] ?? '' }}</p>
                     </div>
-                    <a href="{{ url('/street-view') }}" class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-0.5">
-                        Buka Street View
-                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-                    </a>
-                </div>
 
-                <div class="mb-8 overflow-hidden rounded-[1.5rem] border border-slate-200 shadow-sm">
-                    <iframe id="preview-street-view" width="100%" height="430" style="border:none;" src="{{ isset($firstPreview['street_view_url']) ? $firstPreview['street_view_url'] . '&output=svembed' : '' }}" title="Street View 360" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
+                    <div class="grid gap-3 sm:grid-cols-2 mb-6">
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
+                            Crowd: <span id="preview-crowd" class="font-black text-slate-900">{{ $firstPreview['crowd'] ?? 0 }}%</span>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
+                            Area: <span id="preview-area" class="font-black text-slate-900">{{ $firstPreview['area'] ?? '' }}</span>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
+                            Best time: <span id="preview-best-time" class="font-black text-slate-900">{{ $firstPreview['best_time'] ?? '' }}</span>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
+                            Price: <span id="preview-price" class="font-black text-slate-900">{{ $firstPreviewPrice > 0 ? 'Rp ' . number_format($firstPreviewPrice, 0, ',', '.') : 'Gratis' }}</span>
+                        </div>
+                    </div>
 
-                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
-                        Crowd: <span id="preview-crowd" class="font-black text-slate-900">{{ $firstPreview['crowd'] ?? 0 }}%</span>
+                    <div class="mt-auto flex flex-col gap-3">
+                       
+                        <a href="{{ url('/destinations/' . ($firstPreview['id'] ?? 1)) }}" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white transition-colors hover:bg-slate-800">
+                            Lihat destinasi
+                        </a>
                     </div>
-                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
-                        Area: <span id="preview-area" class="font-black text-slate-900">{{ $firstPreview['area'] ?? '' }}</span>
-                    </div>
-                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
-                        Best time: <span id="preview-best-time" class="font-black text-slate-900">{{ $firstPreview['best_time'] ?? '' }}</span>
-                    </div>
-                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold text-slate-600">
-                        Price: <span id="preview-price" class="font-black text-slate-900">{{ $firstPreviewPrice > 0 ? 'Rp ' . number_format($firstPreviewPrice, 0, ',', '.') : 'Gratis' }}</span>
-                    </div>
-                </div>
-
-                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <a href="{{ url('/street-view') }}" class="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-0.5">
-                        Buka Street View 360°
-                    </a>
-                    <a href="{{ url('/destinations/' . ($firstPreview['id'] ?? 1)) }}" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-black text-slate-700 transition-colors hover:bg-slate-50">
-                        Lihat destinasi
-                    </a>
                 </div>
             </div>
         </div>
@@ -406,12 +383,10 @@
 <section id="manfaat" class="bg-gradient-to-b from-slate-50 to-white px-4 py-24 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-7xl">
         <div class="mb-20 space-y-4 text-center">
-            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2">
-                <span class="text-xs font-bold uppercase tracking-widest text-cyan-600">⚡ Alur Sederhana</span>
-            </div>
-            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">Mulai Petualangan Dalam 4 Langkah</h2>
+            
+            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">Mulai Liburanmu Dalam 4 Langkah</h2>
             <p class="mx-auto max-w-2xl text-lg text-slate-500">
-                Alur dibuat intuitif: temukan destinasi, rasakan suasana melalui Street View 360, cek dashboard interaktif, lalu lanjutkan pemesanan dengan mudah.
+                4 langkah mudah mencari wisata yang sesuai dengan moodmu!
             </p>
         </div>
 
@@ -422,13 +397,13 @@
             <article class="relative z-10 rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(15,23,42,0.08)]">
                 <div class="mb-6 mx-auto flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-gradient-to-br from-cyan-400 to-blue-500 text-2xl font-black text-white shadow-lg shadow-cyan-500/30">1</div>
                 <h3 class="mb-3 text-center text-xl font-black text-slate-900">Pilih Destinasi</h3>
-                <p class="text-center text-sm leading-relaxed text-slate-500">Daftar destinasi ditarik dari database MySQL yang terpusat, menjamin ketersediaan informasi yang selalu update dan konsisten.</p>
+                <p class="text-center text-sm leading-relaxed text-slate-500">Daftar Destinasi unggulan dan seru yang sesuai dengan kondisi cuaca dan mood!.</p>
             </article>
 
             <article class="relative z-10 rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(15,23,42,0.08)]">
                 <div class="mb-6 mx-auto flex h-16 w-16 items-center justify-center rounded-[1.25rem] bg-gradient-to-br from-emerald-400 to-teal-500 text-2xl font-black text-white shadow-lg shadow-emerald-500/30">2</div>
-                <h3 class="mb-3 text-center text-xl font-black text-slate-900">Preview 360°</h3>
-                <p class="text-center text-sm leading-relaxed text-slate-500">Rasakan pengalaman berada di lokasi langsung dari beranda dengan integrasi Google Street View interaktif tanpa harus pindah menu.</p>
+                <h3 class="mb-3 text-center text-xl font-black text-slate-900">Lihat Preview Destinasi</h3>
+                <p class="text-center text-sm leading-relaxed text-slate-500">Lihat kondisi lokasi Realtime, termasuk keadaan cuaca dan tingkat keramaian</p>
             </article>
 
             <article class="relative z-10 rounded-[2rem] border border-slate-100 bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(15,23,42,0.08)]">
@@ -449,24 +424,22 @@
 <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="mx-auto max-w-4xl">
         <div class="mb-16 text-center space-y-4">
-            <div class="inline-flex items-center gap-2 rounded-full bg-cyan-100 px-4 py-2">
-                <span class="text-xs font-bold uppercase tracking-widest text-cyan-700">❓ Tanya Jawab</span>
-            </div>
-            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">FAQ (Tanya Jawab)</h2>
-            <p class="text-lg text-slate-600">Pertanyaan yang sering diajukan mengenai Sivi AI City Companion.</p>
+            
+            <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">FAQ untuk Pengunjung</h2>
+            <p class="text-lg text-slate-600">Jawaban singkat untuk membantu Anda sebelum menjelajahi destinasi.</p>
         </div>
         <div class="space-y-4">
             <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50 transition-colors hover:border-cyan-200">
-                <h3 class="text-xl font-bold text-slate-900">Apa itu Sivi AI?</h3>
-                <p class="mt-2 text-slate-600">Sivi AI adalah platform pariwisata cerdas berbasis web yang memadukan data live, sistem booking, dan AI Monitor untuk memandu kunjungan Anda ke berbagai destinasi di Jakarta.</p>
+                <h3 class="text-xl font-bold text-slate-900">Apa yang bisa saya lakukan di sini sebelum berkunjung?</h3>
+                <p class="mt-2 text-slate-600">Anda bisa melihat preview 360°, mengecek tingkat keramaian, membaca info area, dan membuka detail destinasi agar lebih siap sebelum datang.</p>
             </div>
             <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50 transition-colors hover:border-cyan-200">
-                <h3 class="text-xl font-bold text-slate-900">Apakah saya perlu membuat akun untuk melihat Street View?</h3>
-                <p class="mt-2 text-slate-600">Tidak, Anda dapat langsung menjelajahi preview 360 derajat menggunakan data SQL dan Google Street View di halaman beranda kami tanpa perlu membuat akun.</p>
+                <h3 class="text-xl font-bold text-slate-900">Apakah saya perlu login untuk melihat preview destinasi?</h3>
+                <p class="mt-2 text-slate-600">Tidak perlu. Anda bisa langsung menjelajahi Street View 360 dan membaca informasi destinasi dari halaman beranda.</p>
             </div>
             <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50 transition-colors hover:border-cyan-200">
-                <h3 class="text-xl font-bold text-slate-900">Bagaimana cara AI memonitor keramaian?</h3>
-                <p class="mt-2 text-slate-600">AI Monitor kami menyimulasikan data kamera live yang dihubungkan dengan YOLOv8 untuk mendeteksi kepadatan (crowd) di lokasi, membantu Anda memilih waktu kunjungan terbaik.</p>
+                <h3 class="text-xl font-bold text-slate-900">Bagaimana saya tahu destinasi sedang ramai atau tidak?</h3>
+                <p class="mt-2 text-slate-600">Setiap destinasi menampilkan indikator crowd, sehingga Anda bisa memilih waktu kunjungan yang lebih nyaman sesuai kondisi saat ini.</p>
             </div>
         </div>
     </div>
@@ -476,18 +449,13 @@
     <div class="mx-auto max-w-5xl rounded-[2rem] border border-white/15 bg-white/10 p-8 text-center shadow-2xl backdrop-blur-xl sm:p-12">
         <h2 class="text-4xl font-black sm:text-5xl">Siap menjelajahi Indonesia dengan alur yang lebih rapi?</h2>
         <p class="mx-auto mt-4 max-w-2xl text-lg text-cyan-100">
-            Semua data utama sudah tersambung ke SQL, sehingga home, fitur, preview 360, dan dashboard destinasi memakai sumber yang sama.
+            Siapkan barang bawaanmu, nantikan liburan yang menjamin kenyamanan dan kebersamaan!
         </p>
         <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <a href="{{ url('/destinations') }}" class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-cyan-700 transition-transform hover:-translate-y-0.5">
                 Mulai dari Destinasi
             </a>
-            <a href="#preview-360" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-black text-white transition-colors hover:bg-white/15">
-                Lihat Preview 360
-            </a>
-            <a href="{{ url('/features') }}" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-black text-white transition-colors hover:bg-white/15">
-                Buka Fitur
-            </a>
+          
         </div>
     </div>
 </section>
