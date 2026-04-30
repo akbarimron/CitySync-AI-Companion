@@ -84,7 +84,13 @@ class Destination extends Model
 
     public function getDisplayImageUrlAttribute(): string
     {
-        return (string) $this->meta('image_url', 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop');
+        $fallbackImage = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop';
+
+        if ($this->slug === 'kota-tua-jakarta' || $this->slug === 'kota-tua') {
+            $fallbackImage = 'https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?w=1200&h=800&fit=crop';
+        }
+
+        return (string) $this->meta('image_url', $fallbackImage);
     }
 
     public function getStreetViewEmbedUrlAttribute(): string
