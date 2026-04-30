@@ -46,13 +46,12 @@
             </div>
 
             <div class="space-y-5">
-                <h1 class="text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl mx-auto max-w-4xl">
+                <h1 class="text-5xl font-semibold tracking-tight leading-tight text-white sm:text-6xl lg:text-7xl mx-auto max-w-4xl">
                     Jelajahi destinasi
                     <span class="block bg-gradient-to-r from-cyan-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent">
                         dari satu alur yang rapi
                     </span>
-                </h1>
-                <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+                </h1>                        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
                     Street View tampil di home, AI monitor berada di dalam dashboard destinasi, dan semua data utama ditarik dari MySQL agar pengalaman tetap konsisten.
                 </p>
             </div>
@@ -97,107 +96,217 @@
 
 <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50">
     <div class="mx-auto max-w-7xl">
-        <div class="mb-16 space-y-6">
-            <div class="inline-flex items-center gap-2 rounded-full bg-cyan-100 px-4 py-2">
-                <span class="text-sm font-bold uppercase tracking-widest text-cyan-700">🏛️ Platform features</span>
+
+        <!-- HEADER -->
+        <div class="mb-16 space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2">
+                <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path d="M3 7h18M3 12h18M3 17h18"/>
+                </svg>
+                <span class="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                    Platform Features
+                </span>
             </div>
-            <div class="max-w-3xl">
-                <h2 class="mb-6 text-4xl font-black leading-tight text-slate-900 sm:text-5xl">Fitur inti disusun dari data SQL</h2>
-                <p class="text-lg leading-relaxed text-slate-600">
-                    Lima pilar platform di bawah ini berasal dari tabel fitur yang sama dengan halaman khusus fitur, sehingga home dan halaman fitur selalu sinkron.
+
+            <div class="max-w-2xl">
+                <h2 class="mb-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
+                    Fitur inti dalam satu sistem terintegrasi
+                </h2>
+                <p class="text-base leading-relaxed text-slate-600">
+                    Semua fitur dirancang untuk memberikan pengalaman yang konsisten, efisien, dan seamless dalam satu platform.
                 </p>
             </div>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-            @foreach ($features as $feature)
-                @php
-                    $featureStyle = $featureStyles[$feature['accent_color']] ?? $featureStyles['cyan'];
-                @endphp
-                <article class="group flex h-full flex-col rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(15,23,42,0.1)]">
-                    <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl {{ $featureStyle['wrapper'] }} transition-transform group-hover:scale-110">
-                        @switch($feature['icon_key'])
-                            @case('assistant')
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
-                                @break
-                            @case('crowd')
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                                @break
-                            @case('preview')
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/></svg>
-                                @break
-                            @case('booking')
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z"/></svg>
-                                @break
-                            @default
-                                <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
-                        @endswitch
+        <!-- GRID -->
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+            <!-- CARD -->
+            <!-- 1 -->
+            <a href="{{ url('/personalization') }}"
+   class="block">
+                <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M9.75 3a3 3 0 00-3 3v.75a3 3 0 00-1.5 2.6v.3a3 3 0 001.5 2.6V13.5a3 3 0 003 3h.5a3 3 0 003 3h.5a3 3 0 003-3v-6a6 6 0 00-6-6h-1.5z"/>
+                        </svg>
                     </div>
 
-                    <div class="flex-1 space-y-4">
-                        <div>
-                            <p class="text-xs font-black uppercase tracking-[0.22em] text-slate-400">Feature {{ str_pad((string) ($feature['sort_order'] ?? 0), 2, '0', STR_PAD_LEFT) }}</p>
-                            <h3 class="mt-2 text-xl font-black text-slate-900">{{ $feature['name'] }}</h3>
-                        </div>
-                        <p class="text-sm leading-7 text-slate-600">{{ $feature['description'] }}</p>
-                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">
+                        Contextual AI Assistant
+                    </h3>
 
-                    <div class="mt-6 border-t border-slate-100 pt-4">
-                        <span class="text-xs font-bold uppercase tracking-widest {{ $featureStyle['label'] }}">Online layer</span>
-                    </div>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Memberikan rekomendasi destinasi secara real-time berdasarkan preferensi dan konteks pengguna.
+                    </p>
+
                 </article>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-    <div class="mx-auto max-w-7xl">
-        <div class="mb-16 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div class="max-w-3xl space-y-4">
-                <p class="text-xs font-black uppercase tracking-[0.24em] text-cyan-700">Destinasi unggulan</p>
-                <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">Destinasi yang siap dipakai di SQL</h2>
-                <p class="text-base leading-8 text-slate-600">
-                    Data unggulan di bawah dipakai kembali di home, fitur, dan dashboard destinasi agar pengalaman tetap konsisten.
-                </p>
-            </div>
-            <a href="{{ url('/destinations') }}" class="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white transition-transform hover:-translate-y-0.5">
-                Buka daftar destinasi
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
             </a>
+
+            <!-- 2 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path d="M17 20a4 4 0 00-8 0M12 12a4 4 0 100-8 4 4 0 000 8z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">Proactive Crowd Optimizer</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Mengelola kepadatan pengunjung secara proaktif untuk menciptakan pengalaman yang lebih nyaman.
+                </p>
+            </article>
+
+            <!-- 3 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">Immersive Real-Time Preview</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Menampilkan preview destinasi secara real-time untuk membantu pengguna sebelum berkunjung.
+                </p>
+            </article>
+
+            <!-- 4 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <path d="M8 2v4M16 2v4M3 10h18"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">Smart Booking & Dynamic Pricing</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Sistem booking pintar dengan penyesuaian harga dinamis berdasarkan kondisi dan permintaan.
+                </p>
+            </article>
+
+            <!-- 5 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <rect x="2" y="5" width="20" height="14" rx="2"/>
+                        <path d="M2 10h20"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-slate-900">Unified Payment & Access</h3>
+                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Integrasi pembayaran dan akses dalam satu sistem untuk pengalaman yang lebih praktis.
+                </p>
+            </article>
+
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            @foreach ($featuredDestinations as $destination)
-                <article class="group overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] transition-transform duration-300 hover:-translate-y-1">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="{{ $destination['image_url'] }}" alt="{{ $destination['name'] }}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                            <div>
-                                <p class="text-xs font-black uppercase tracking-[0.22em] text-cyan-100">{{ $destination['category'] }}</p>
-                                <h3 class="mt-1 text-xl font-black text-white">{{ $destination['name'] }}</h3>
-                            </div>
-                            <span class="rounded-full bg-white/15 px-3 py-1 text-xs font-black text-white ring-1 ring-white/20">{{ $destination['rating'] }}</span>
-                        </div>
-                    </div>
-                    <div class="space-y-4 p-5">
-                        <p class="text-sm leading-7 text-slate-600">{{ $destination['preview_copy'] }}</p>
-                        <div class="flex items-center justify-between text-sm font-semibold text-slate-500">
-                            <span>{{ $destination['area'] }}</span>
-                            <span>{{ $destination['price'] > 0 ? 'Rp ' . number_format($destination['price'], 0, ',', '.') : 'Gratis' }}</span>
-                        </div>
-                        <a href="{{ url('/destinations/' . $destination['id']) }}" class="inline-flex items-center gap-2 text-sm font-black text-cyan-700 transition-colors hover:text-cyan-800">
-                            Lihat detail destinasi
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                    </div>
-                </article>
-            @endforeach
-        </div>
     </div>
 </section>
 
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+    {{-- Background Gradient --}}
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50 to-emerald-50"></div>
+    <div class="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-300/20 blur-3xl"></div>
+    <div class="absolute bottom-[-200px] right-[-100px] h-[400px] w-[400px] rounded-full bg-emerald-300/20 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-7xl">
+
+        {{-- Header --}}
+        <div class="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+
+            <div class="max-w-3xl space-y-4">
+                <p class="inline-flex items-center rounded-full bg-white/60 px-4 py-1 text-xs font-black uppercase tracking-[0.24em] text-cyan-700 backdrop-blur">
+                    Destinasi unggulan
+                </p>
+
+                <h2 class="text-4xl font-black leading-tight text-slate-900 sm:text-5xl">
+                    Destinasi yang siap dipakai di SQL
+                </h2>
+
+                <p class="text-base leading-7 text-slate-600">
+                    Data ini digunakan di seluruh sistem agar pengalaman tetap konsisten dari home sampai dashboard.
+                </p>
+            </div>
+
+            <a href="{{ url('/destinations') }}"
+               class="group inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-black text-white shadow-lg shadow-slate-900/20 transition-all hover:-translate-y-0.5 hover:bg-slate-800">
+                Buka daftar destinasi
+                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1"
+                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+        </div>
+
+        {{-- Grid --}}
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+
+            @foreach ($featuredDestinations as $destination)
+                <article
+                    class="group relative overflow-hidden rounded-3xl border border-white/40 bg-white/70 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
+
+                    {{-- Image --}}
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="{{ $destination['image_url'] }}"
+                             alt="{{ $destination['name'] }}"
+                             class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                             loading="lazy">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent"></div>
+
+                        {{-- Badge --}}
+                        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                            <div>
+                                <p class="text-[11px] font-black uppercase tracking-[0.2em] text-cyan-200">
+                                    {{ $destination['category'] }}
+                                </p>
+                                <h3 class="mt-1 text-lg font-black text-white">
+                                    {{ $destination['name'] }}
+                                </h3>
+                            </div>
+
+                            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-white backdrop-blur ring-1 ring-white/20">
+                                ★ {{ $destination['rating'] }}
+                            </span>
+                        </div>
+                    </div>
+
+                    {{-- Content --}}
+                    <div class="space-y-4 p-5">
+
+                        <p class="text-sm leading-6 text-slate-600">
+                            {{ $destination['preview_copy'] }}
+                        </p>
+
+                        <div class="flex items-center justify-between text-sm font-semibold text-slate-500">
+                            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs">
+                                {{ $destination['area'] }}
+                            </span>
+
+                            <span class="font-black text-slate-800">
+                                {{ $destination['price'] > 0 ? 'Rp ' . number_format($destination['price'], 0, ',', '.') : 'Gratis' }}
+                            </span>
+                        </div>
+
+                        <a href="{{ url('/destinations/' . $destination['id']) }}"
+                           class="inline-flex items-center gap-2 text-sm font-black text-cyan-700 transition-all hover:gap-3 hover:text-cyan-800">
+
+                            Lihat detail
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+
+                    </div>
+                </article>
+            @endforeach
+
+        </div>
+    </div>
+</section>
 <section id="preview-360" class="bg-gradient-to-br from-slate-50 to-cyan-50 px-4 py-24 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-7xl">
         <div class="mb-12 space-y-4 text-center">
