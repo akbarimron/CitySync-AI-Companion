@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Street View 360° — CitySync AI')
+@section('title', 'Street View 360° — Sivi AI')
 
 @section('content')
 @php

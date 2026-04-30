@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Fitur — CitySync AI')
+@section('title', 'Fitur — Sivi AI')
 
 @section('content')
 <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-cyan-950 to-emerald-950 pt-28 pb-20 text-white md:pt-32">
@@ -20,7 +20,7 @@
                 <div class="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.24em] text-cyan-100">
                     Platform features
                 </div>
-                <h1 class="max-w-4xl text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl">Satu halaman khusus untuk semua fitur CitySync AI</h1>
+                <h1 class="max-w-4xl text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl">Satu halaman khusus untuk semua fitur Sivi AI</h1>
                 <p class="max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
                     Lima pillar produk kini ditarik langsung dari SQL, sehingga tampilan home, dashboard, dan halaman fitur punya sumber data yang sama.
                 </p>

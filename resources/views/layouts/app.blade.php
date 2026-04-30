@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CitySync AI Companion — Smart tourism OS powered by AI for Jakarta.">
-    <title>@yield('title', 'CitySync AI Companion')</title>
+    <meta name="description" content="Sivi Companion — Smart tourism OS powered by AI for Jakarta.">
+    <title>@yield('title', 'Sivi Companion')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -40,7 +40,7 @@
                     </svg>
                 </span>
                 <span class="leading-tight">
-                    <span class="block text-sm font-black tracking-tight text-slate-950">CitySync AI</span>
+                    <span class="block text-sm font-black tracking-tight text-slate-950">Sivi</span>
                     <span class="block text-xs font-semibold text-slate-500">Smart tourism OS</span>
                 </span>
             </a>
@@ -59,7 +59,20 @@
                     class="rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition-colors duration-200 hover:bg-cyan-50 hover:text-cyan-700">Kontak</a>
                 <a href="{{ url('/destinations') }}"
                     class="rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition-colors duration-200 hover:bg-cyan-50 hover:text-cyan-700">Destinasi</a>
+                <a href="{{ url('/scheduling') }}"
+                    class="rounded-full px-4 py-2 text-sm font-bold text-slate-600 transition-colors duration-200 hover:bg-cyan-50 hover:text-cyan-700">Planner</a>
             </div>
+
+            <a href="{{ url('/') }}" class="flex items-center gap-3 group" id="brand-logo-link">
+                <span
+                    class="flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-lg shadow-cyan-500/25 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105"
+                    style="background: linear-gradient(135deg, #0ea5e9, #10b981);">
+                </span>
+                <span class="leading-tight">
+                    <span class="block text-sm font-black tracking-tight text-slate-950">Username</span>
+                    <span class="block text-xs font-semibold text-red-500">LogOut</span>
+                </span>
+            </a>
 
             {{-- Mobile Toggle --}}
             <button id="mobile-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false"
@@ -117,8 +130,8 @@
                             </svg>
                         </span>
                         <div>
-                            <p class="text-lg font-black text-slate-900 tracking-tight">CitySync AI</p>
-                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Smart tourism OS</p>
+                            <p class="text-lg font-black text-slate-900 tracking-tight">Sivi</p>
+                            <p class="text-xs font-bold uppercase tracking-widest text-slate-400">AI City Companion</p>
                         </div>
                     </div>
                     <p class="max-w-md text-sm leading-7 text-slate-500 font-medium">
@@ -161,7 +174,7 @@
                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                                 </path>
                             </svg>
-                            support@citysync.id
+                            support@sivi.id
                         </li>
                         <li class="flex items-center gap-3">
                             <svg class="h-4 w-4 text-emerald-600" fill="none" stroke="currentColor"
@@ -188,7 +201,7 @@
 
             <div
                 class="mt-16 flex flex-col gap-4 border-t border-slate-100 pt-8 text-xs font-semibold text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-                <p>&copy; {{ date('Y') }} CitySync AI Companion. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} Sivi Companion. All rights reserved.</p>
                 <div class="flex items-center gap-4">
                     <span>Powered by Laravel</span>
                     <span class="w-1 h-1 rounded-full bg-slate-300"></span>

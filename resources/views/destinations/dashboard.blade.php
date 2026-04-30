@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Destinasi — CitySync AI')
+@section('title', 'Detail Destinasi — Sivi AI')
 
 @php
 $selected = isset($destination) && is_object($destination) ? $destination->toUiArray() : [];
@@ -242,9 +242,9 @@ $mapUrl = !empty($selected['street_view_url']) ? $selected['street_view_url'] . 
                                     />
                                 </div>
 
-                                <button 
+                                <button
                                     id="submitBtn"
-                                    type="submit" 
+                                    type="submit"
                                     class="inline-flex w-full items-center justify-center rounded-2xl bg-cyan-600 px-5 py-4 text-sm font-black text-white transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     <span id="btnText">Jalankan Analisis AI</span>
@@ -411,10 +411,10 @@ $mapUrl = !empty($selected['street_view_url']) ? $selected['street_view_url'] . 
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const hasFile = fileInput.files.length > 0;
             const hasSource = sourceInput.value.trim().length > 0;
-            
+
             if (!hasFile && !hasSource) {
                 fileInfo.textContent = '⚠ Pilih file atau isi URL/path source!';
                 fileInfo.className = 'mt-1 text-xs font-bold text-red-500';
@@ -436,7 +436,7 @@ $mapUrl = !empty($selected['street_view_url']) ? $selected['street_view_url'] . 
                 const formData = new FormData();
                 const token = document.querySelector('input[name="_token"]').value;
                 formData.append('_token', token);
-                
+
                 if (hasFile) formData.append('video_file', fileInput.files[0]);
                 if (hasSource) formData.append('video_source', sourceInput.value.trim());
                 formData.append('json', '1'); // Request JSON response instead of HTML view
@@ -452,13 +452,13 @@ $mapUrl = !empty($selected['street_view_url']) ? $selected['street_view_url'] . 
 
                 if (response.ok) {
                     const data = await response.json();
-                    
+
                     document.getElementById('ai-weather').innerHTML = (data.weather_icon || '') + ' ' + (data.dominant_weather_label || '-');
                     document.getElementById('ai-crowd').textContent = (data.crowd_level || '-') + ' (' + (data.avg_person_count || 0) + ' orang)';
-                    
+
                     const recEl = document.getElementById('ai-recommendation');
                     recEl.innerHTML = '<span class="text-base">💡</span> ' + (data.visit_recommendation || 'Analisis selesai.');
-                    
+
                     if (data.output_video_url) {
                         const videoContainer = document.getElementById('ai-video-container');
                         const videoEl = document.getElementById('ai-result-video');

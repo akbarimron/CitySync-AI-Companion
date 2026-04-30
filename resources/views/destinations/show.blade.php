@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Destinasi - CitySync AI')
+@section('title', 'Detail Destinasi - Sivi AI')
 
 @section('content')
 

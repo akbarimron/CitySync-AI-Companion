@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'CitySync AI Companion')
+@section('title', 'Sivi AI City Companion')
 
 @section('content')
 @php
@@ -342,12 +342,12 @@
                 <span class="text-xs font-bold uppercase tracking-widest text-cyan-700">❓ Tanya Jawab</span>
             </div>
             <h2 class="text-4xl font-black text-slate-900 sm:text-5xl">FAQ (Tanya Jawab)</h2>
-            <p class="text-lg text-slate-600">Pertanyaan yang sering diajukan mengenai CitySync AI Companion.</p>
+            <p class="text-lg text-slate-600">Pertanyaan yang sering diajukan mengenai Sivi AI City Companion.</p>
         </div>
         <div class="space-y-4">
             <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50 transition-colors hover:border-cyan-200">
-                <h3 class="text-xl font-bold text-slate-900">Apa itu CitySync AI?</h3>
-                <p class="mt-2 text-slate-600">CitySync AI adalah platform pariwisata cerdas berbasis web yang memadukan data live, sistem booking, dan AI Monitor untuk memandu kunjungan Anda ke berbagai destinasi di Jakarta.</p>
+                <h3 class="text-xl font-bold text-slate-900">Apa itu Sivi AI?</h3>
+                <p class="mt-2 text-slate-600">Sivi AI adalah platform pariwisata cerdas berbasis web yang memadukan data live, sistem booking, dan AI Monitor untuk memandu kunjungan Anda ke berbagai destinasi di Jakarta.</p>
             </div>
             <div class="rounded-2xl border border-slate-200 p-6 bg-slate-50 transition-colors hover:border-cyan-200">
                 <h3 class="text-xl font-bold text-slate-900">Apakah saya perlu membuat akun untuk melihat Street View?</h3>
