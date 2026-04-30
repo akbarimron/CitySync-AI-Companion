@@ -7,6 +7,9 @@
  * @param {number} value - The value to format
  * @returns {string} - Formatted currency string
  */
+
+
+
 function formatCurrency(value) {
     return new Intl.NumberFormat('id-ID').format(value);
 }
@@ -19,7 +22,7 @@ function formatCurrency(value) {
  */
 function initializeTabs(containerSelector = 'input[name="dest-tabs"]', paneSelector = '.tab-pane') {
     const tabs = document.querySelectorAll(containerSelector);
-    
+
     tabs.forEach(tab => {
         tab.addEventListener('change', function() {
             const activeTab = this.value;
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIconOpen = document.getElementById('menu-icon-open');
     const menuIconClose = document.getElementById('menu-icon-close');
-    
+
     if (mobileMenuBtn && mobileMenu && menuIconOpen && menuIconClose) {
         mobileMenuBtn.addEventListener('click', function() {
             const isOpen = !mobileMenu.classList.contains('hidden');

@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'external_service' => [
+        'key' => env('EXTERNAL_SERVICE_API_KEY'),
+        'base_url' => env('EXTERNAL_SERVICE_BASE_URL'),
+    ],
+
 ];
