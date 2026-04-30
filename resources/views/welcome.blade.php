@@ -145,17 +145,19 @@
             </a>
 
             <!-- 2 -->
-            <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
-                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                        <path d="M17 20a4 4 0 00-8 0M12 12a4 4 0 100-8 4 4 0 000 8z"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-slate-900">Proactive Crowd Optimizer</h3>
-                <p class="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Mengelola kepadatan pengunjung secara proaktif untuk menciptakan pengalaman yang lebih nyaman.
-                </p>
-            </article>
+            <a href="{{ url('/scheduling') }}">
+                <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
+                    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 text-white shadow-sm transition group-hover:scale-105">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path d="M17 20a4 4 0 00-8 0M12 12a4 4 0 100-8 4 4 0 000 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">Proactive Crowd Optimizer</h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Mengelola kepadatan pengunjung secara proaktif untuk menciptakan pengalaman yang lebih nyaman.
+                    </p>
+                </article>
+            </a>
 
             <!-- 3 -->
             <article class="group flex flex-col rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-cyan-300">
