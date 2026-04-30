@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Destinations - CitySync AI')
+@section('title', 'Destinations - Sivi AI')
 
 @section('content')
 <div class="bg-base-100 min-h-screen">
-    
+
     <!-- HERO SECTION -->
     <section class="relative py-14 md:py-20 bg-gradient-to-br from-cyan-50 via-slate-50 to-emerald-50 overflow-hidden">
         <div class="absolute inset-0 opacity-30">
             <div class="absolute top-20 left-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
             <div class="absolute bottom-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
         </div>
-        
+
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur-xl md:p-10">
                 <div class="text-center space-y-5">
@@ -24,22 +24,22 @@
                         </span>
                         <span class="mt-2 block text-slate-900">Jakarta Bersama AI</span>
                     </h1>
-                    
+
                     <p class="mx-auto max-w-3xl text-lg leading-relaxed text-slate-600">
                         Temukan destinasi impian dengan preview 360, cuaca real-time, analisis kepadatan, dan booking demo yang lebih rapi.
                     </p>
-                    
+
                     <!-- Search Bar -->
                     <div class="mx-auto max-w-2xl pt-2">
                         <div class="flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-sm sm:flex-row">
-                            <input 
-                                type="text" 
-                                id="search-input" 
-                                placeholder="🔍 Cari destinasi favorit..." 
+                            <input
+                                type="text"
+                                id="search-input"
+                                placeholder="🔍 Cari destinasi favorit..."
                                 class="flex-1 rounded-full border-0 bg-slate-50 px-6 py-3 focus:ring-2 focus:ring-cyan-400"
                             />
-                            <button 
-                                id="search-btn" 
+                            <button
+                                id="search-btn"
                                 class="btn btn-primary h-12 rounded-full px-8 font-bold gap-2"
                             >
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@
         <div id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <!-- Cards akan dimuat via JavaScript -->
         </div>
-        
+
         <!-- Empty State -->
         <div id="empty-state" class="hidden text-center py-16">
             <div class="inline-block p-4 bg-slate-100 rounded-full mb-6">
@@ -102,9 +102,9 @@
         <form method="dialog">
             <button type="button" class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
-        
+
         <h2 class="font-bold text-2xl mb-6" id="modal-destination-name">Nama Destinasi</h2>
-        
+
         <!-- Destination Preview -->
         <div class="mb-6 pb-6 border-b">
             <img id="modal-destination-image" src="" alt="" class="w-full h-40 object-cover rounded-xl mb-4" />
@@ -116,7 +116,7 @@
                 <span id="modal-category" class="badge badge-primary badge-lg text-white"></span>
             </div>
         </div>
-        
+
         <!-- Booking Form -->
         <form class="space-y-5">
             <!-- Tanggal -->
@@ -126,7 +126,7 @@
                 </label>
                 <input type="date" id="booking-date" class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-cyan-400" required />
             </div>
-            
+
             <!-- Jumlah Tiket -->
             <div class="form-control">
                 <label class="label">
@@ -138,7 +138,7 @@
                     <button type="button" id="increase-ticket" class="btn btn-circle btn-sm btn-outline">+</button>
                 </div>
             </div>
-            
+
             <!-- Price Summary -->
             <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200">
                 <div class="space-y-2 mb-3">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Notes -->
             <div class="form-control">
                 <label class="label">
@@ -167,7 +167,7 @@
                 <textarea id="booking-notes" class="textarea textarea-bordered text-sm" placeholder="Misal: grup wisata, kebutuhan khusus, dll" rows="3"></textarea>
             </div>
         </form>
-        
+
         <!-- Action Buttons -->
         <div class="modal-action mt-8">
             <form method="dialog">
@@ -364,13 +364,13 @@ function formatCurrency(value) {
 function renderDestinations() {
     const grid = document.getElementById('destinations-grid');
     const emptyState = document.getElementById('empty-state');
-    
+
     if (filteredDestinations.length === 0) {
         grid.innerHTML = '';
         emptyState.classList.remove('hidden');
         return;
     }
-    
+
     emptyState.classList.add('hidden');
     grid.innerHTML = filteredDestinations.map(dest => `
         <div class="destination-card group card bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer" data-id="${dest.id}">
@@ -387,11 +387,11 @@ function renderDestinations() {
                     <span class="badge badge-sm font-bold">${dest.category}</span>
                 </div>
             </figure>
-            
+
             <div class="card-body p-4">
                 <h3 class="card-title text-lg font-bold line-clamp-2">${dest.name}</h3>
                 <p class="text-sm text-slate-600 line-clamp-2 mb-3">${dest.description}</p>
-                
+
                 <!-- Info Row -->
                 <div class="space-y-2 mb-4 py-3 border-y border-slate-100">
                     <div class="flex items-center justify-between text-xs">
@@ -410,7 +410,7 @@ function renderDestinations() {
                         ${dest.weather}
                     </div>
                 </div>
-                
+
                 <!-- Price & Action -->
                 <div class="card-actions justify-between items-center">
                     ${dest.basePrice > 0 ? `
@@ -432,13 +432,13 @@ function renderDestinations() {
             </div>
         </div>
     `).join('');
-    
+
     attachEventListeners();
 }
 
 document.getElementById('search-input').addEventListener('keyup', function(e) {
     const query = e.target.value.toLowerCase();
-    filteredDestinations = destinations.filter(dest => 
+    filteredDestinations = destinations.filter(dest =>
         dest.name.toLowerCase().includes(query) ||
         dest.description.toLowerCase().includes(query)
     );
@@ -453,10 +453,10 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('btn-active'));
         this.classList.add('btn-active');
-        
+
         currentFilter = this.dataset.filter;
-        filteredDestinations = currentFilter === 'all' 
-            ? [...destinations] 
+        filteredDestinations = currentFilter === 'all'
+            ? [...destinations]
             : destinations.filter(dest => dest.category === currentFilter);
         renderDestinations();
     });
@@ -470,7 +470,7 @@ function attachEventListeners() {
             window.location.href = `/destinations/${id}`;
         });
     });
-    
+
     // Book button (stop propagation to prevent card click)
     document.querySelectorAll('.book-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
@@ -484,22 +484,22 @@ function attachEventListeners() {
 
 function openBookingModal(destination) {
     const modal = document.getElementById('booking-modal');
-    
+
     document.getElementById('modal-destination-name').textContent = destination.name;
     document.getElementById('modal-destination-image').src = destination.image;
     document.getElementById('modal-destination-description').textContent = destination.description;
     document.getElementById('modal-base-price').textContent = formatCurrency(destination.basePrice);
     document.getElementById('modal-category').textContent = destination.category;
-    
+
     document.getElementById('unit-price').textContent = `Rp ${formatCurrency(destination.basePrice)}`;
     updateTotalPrice(destination.basePrice, 1);
-    
+
     document.getElementById('booking-date').value = '';
     document.getElementById('ticket-count').textContent = '1';
     document.getElementById('booking-notes').value = '';
-    
+
     let ticketCount = 1;
-    
+
     document.getElementById('increase-ticket').onclick = function(e) {
         e.preventDefault();
         ticketCount++;
@@ -507,7 +507,7 @@ function openBookingModal(destination) {
         document.getElementById('qty-display').textContent = ticketCount + ' tiket';
         updateTotalPrice(destination.basePrice, ticketCount);
     };
-    
+
     document.getElementById('decrease-ticket').onclick = function(e) {
         e.preventDefault();
         if (ticketCount > 1) {
@@ -517,22 +517,22 @@ function openBookingModal(destination) {
             updateTotalPrice(destination.basePrice, ticketCount);
         }
     };
-    
+
     document.getElementById('confirm-booking').onclick = function() {
         const date = document.getElementById('booking-date').value;
         const tickets = parseInt(document.getElementById('ticket-count').textContent);
         const notes = document.getElementById('booking-notes').value;
-        
+
         if (!date) {
             alert('Silakan pilih tanggal terlebih dahulu');
             return;
         }
-        
+
         const total = parseInt(document.getElementById('total-price').textContent.replace(/\D/g, ''));
         alert(`✅ Booking Dikonfirmasi!\n\nDestinasi: ${destination.name}\nTanggal: ${date}\nJumlah Tiket: ${tickets}\nTotal: Rp ${formatCurrency(total)}`);
         modal.close();
     };
-    
+
     modal.showModal();
 }
 

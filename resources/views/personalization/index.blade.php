@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitySync AI - Companion</title>
+    <title>Sivi - AI City Companion</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -51,7 +51,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/></svg>
             </div>
             <div>
-                <h1 class="font-bold text-white text-base leading-tight">CitySync AI</h1>
+                <h1 class="font-bold text-white text-base leading-tight">Sivi - AI City Companion</h1>
                 <p class="text-[10px] text-cyan-400/80 uppercase tracking-widest font-semibold mt-0.5">Smart Tourism OS</p>
             </div>
         </div>
@@ -127,7 +127,7 @@ const RESPONSES = [
 ];
 
 const DEFAULT = {
-    text: "Maaf, CitySync belum memiliki data spesifik untuk itu. Coba tanya rute ke Ancol, Monas, atau info cuaca terbaru!",
+    text: "Maaf, Sivi belum memiliki data spesifik untuk itu. Coba tanya rute ke Ancol, Monas, atau info cuaca terbaru!",
     card: null
 };
 
@@ -245,7 +245,7 @@ async function handleSend(preset) {
 document.getElementById('message').addEventListener('keypress', e => { if (e.key === 'Enter') handleSend(); });
 
 (function init() {
-    appendBot("Selamat datang di CitySync AI. Jelajahi destinasi dari satu alur yang rapi. Ada yang bisa saya bantu hari ini?");
+    appendBot("Selamat datang di Sivi - AI City Companion. Jelajahi destinasi dari satu alur yang rapi. Ada yang bisa saya bantu hari ini?");
     appendQuick();
 })();
 </script>

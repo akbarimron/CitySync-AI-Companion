@@ -29,10 +29,18 @@ html {
 }
 
 body {
-    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     background:
-        radial-gradient(circle at 15% 8%, rgba(14, 165, 233, 0.14), transparent 26rem),
-        radial-gradient(circle at 92% 22%, rgba(16, 185, 129, 0.14), transparent 26rem),
+        radial-gradient(
+            circle at 15% 8%,
+            rgba(14, 165, 233, 0.14),
+            transparent 26rem
+        ),
+        radial-gradient(
+            circle at 92% 22%,
+            rgba(16, 185, 129, 0.14),
+            transparent 26rem
+        ),
         #f7fbff;
     color: hsl(var(--foreground));
 }
@@ -98,7 +106,10 @@ body {
 .feature-card {
     position: relative;
     overflow: hidden;
-    transition: transform 280ms ease, border-color 280ms ease, box-shadow 280ms ease;
+    transition:
+        transform 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms ease;
 }
 
 .feature-card::before {
@@ -106,7 +117,11 @@ body {
     position: absolute;
     inset: -1px;
     opacity: 0;
-    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.18));
+    background: linear-gradient(
+        135deg,
+        rgba(14, 165, 233, 0.2),
+        rgba(16, 185, 129, 0.18)
+    );
     transition: opacity 280ms ease;
     pointer-events: none;
 }
@@ -133,7 +148,14 @@ body {
     content: "";
     position: absolute;
     inset: -30%;
-    background: conic-gradient(from 120deg, transparent, rgba(56, 189, 248, 0.18), transparent, rgba(52, 211, 153, 0.16), transparent);
+    background: conic-gradient(
+        from 120deg,
+        transparent,
+        rgba(56, 189, 248, 0.18),
+        transparent,
+        rgba(52, 211, 153, 0.16),
+        transparent
+    );
     animation: spinGlow 10s linear infinite;
     pointer-events: none;
 }
@@ -153,7 +175,9 @@ body {
     color: #475569;
     font-size: 0.875rem;
     font-weight: 900;
-    transition: color 180ms ease, transform 180ms ease;
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
 }
 
 .footer-link:hover {
@@ -186,7 +210,9 @@ body {
 
 /* ─── Destination Cards ─────────────────────────────────────── */
 .dest-card {
-    transition: transform 300ms ease, border-color 300ms ease;
+    transition:
+        transform 300ms ease,
+        border-color 300ms ease;
     cursor: pointer;
 }
 
@@ -200,13 +226,24 @@ body {
 }
 
 /* ─── Heatmap ───────────────────────────────────────────────── */
-.heatmap-hot { background: rgb(248 113 113); opacity: 0.9; }
-.heatmap-mid { background: rgb(34 211 238); opacity: 0.7; }
-.heatmap-low { background: rgb(52 211 153); opacity: 0.5; }
+.heatmap-hot {
+    background: rgb(248 113 113);
+    opacity: 0.9;
+}
+.heatmap-mid {
+    background: rgb(34 211 238);
+    opacity: 0.7;
+}
+.heatmap-low {
+    background: rgb(52 211 153);
+    opacity: 0.5;
+}
 
 /* ─── Keyframes ─────────────────────────────────────────────── */
 @keyframes spinGlow {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes floatIn {
@@ -221,8 +258,13 @@ body {
 }
 
 @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
 }
 
 .animate-pulse-dot {
@@ -231,12 +273,18 @@ body {
 
 /* ─── Responsive Tweaks ─────────────────────────────────────── */
 @media (max-width: 640px) {
-    .section-title { line-height: 1.05; }
-    .section-copy { font-size: 0.9rem; }
+    .section-title {
+        line-height: 1.05;
+    }
+    .section-copy {
+        font-size: 0.9rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
